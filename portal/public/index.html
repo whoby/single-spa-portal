@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="./favicon.ico" />
+    <title>single-spa-portal</title>
+  </head>
+  <body>
+    <nav>
+      <a onClick="linkTo('/vue')">Vue</a>
+      <a onClick="linkTo('/react')">React</a>
+    </nav>
+    <div id="root"></div>
+  </body>
+</html>
+<script src="./system.js"></script>
+<script src="./main.js"></script>
+<script>
+  // 直接href跳转会刷新
+  function linkTo(prefixUrl) {
+    window.history.pushState(null, null, prefixUrl)
+  }
+</script>
+<style>
+  body {
+    margin: 0;
+  }
+  nav {
+    margin: 0;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    background-color: #545c64;
+  }
+  nav a {
+    margin: 0 15px;
+    color: #f3d141;
+    cursor: pointer;
+    text-decoration: none;
+  }
+</style>
